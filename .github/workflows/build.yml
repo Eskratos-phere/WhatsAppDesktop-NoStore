@@ -1,4 +1,4 @@
-name: Build WhatsApp Desktop NoStore
+name: Build WhatsappUpdater
 
 on:
   workflow_dispatch:
@@ -21,11 +21,12 @@ jobs:
       uses: microsoft/setup-msbuild@v2
 
     - name: Build solution
-      run: msbuild WhatsappUpdater.sln/p:Configuration=Release
+      run: msbuild WhatsappUpdater.sln /p:Configuration=Release
 
     - name: Upload artifact (Compiled EXE)
       uses: actions/upload-artifact@v4
       with:
-        name: WhatsappUpdater-NoStore-Build
+        name: WhatsappUpdater-Build
         path: |
           **/bin/Release/**
+
