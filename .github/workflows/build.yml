@@ -21,7 +21,7 @@ jobs:
       uses: microsoft/setup-msbuild@v2
 
     - name: Build solution
-      run: msbuild WhatsAppDesktop-NoStore.sln /p:Configuration=Release
+      run: msbuild WhatsappUpdater.sln /p:Configuration=Release
 
     - name: Upload artifact (Compiled EXE)
       uses: actions/upload-artifact@v4
