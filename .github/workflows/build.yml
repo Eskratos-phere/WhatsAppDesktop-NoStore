@@ -15,17 +15,17 @@ jobs:
       uses: NuGet/setup-nuget@v1
 
     - name: Restore NuGet packages
-      run: nuget restore WhatsAppDesktop-NoStore.sln
+      run: nuget restore WhatsappUpdater.sln
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
 
     - name: Build solution
-      run: msbuild WhatsappUpdater.sln /p:Configuration=Release
+      run: msbuild WhatsappUpdater.sln/p:Configuration=Release
 
     - name: Upload artifact (Compiled EXE)
       uses: actions/upload-artifact@v4
       with:
-        name: WhatsAppDesktop-NoStore-Build
+        name: WhatsappUpdater-NoStore-Build
         path: |
           **/bin/Release/**
